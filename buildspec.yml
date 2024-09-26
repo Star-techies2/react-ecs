@@ -18,7 +18,7 @@ phases:
     commands:
       - echo Building the Docker image...
       - ls -al
-      - docker build -t my-react-app -f docker/Dockerfile .
+      - docker build -t my-react-app .
       - docker tag my-react-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/myfirstproject:latest
   post_build:
     commands:
