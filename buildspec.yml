@@ -18,7 +18,7 @@ phases:
     commands:
       - echo Building the Docker image...
       - ls -al
-      - docker build -t my-react-app .
+      - docker build -t my-react-app -f docker/Dockerfile .
       - docker tag my-react-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/myfirstproject:latest
   post_build:
     commands:
@@ -35,4 +35,3 @@ env:
     AWS_DEFAULT_REGION: "us-east-1"
   image: aws/codebuild/standard:5.0
   compute_type: BUILD_GENERAL1_SMALL
-
